@@ -1,14 +1,23 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import AuthContext from '../context/AuthContext'
+
 
 const Header = () => {
-  return (
-    <div>
-        <Link to="/">Main</Link>
-        <span> | </span>
-        <Link to="/login">Login</Link>
-    </div>
-  )
+    let {user} = useContext(AuthContext)
+    return (
+        <div>
+            <Link to="/">Main</Link>
+            {!user && (
+                <>
+                    <span> | </span>
+                    <Link to="/login">Login</Link>
+                </>
+            )}
+
+            {user && <p>Your username: {user.username}</p>}
+        </div>
+    )
 }
 
 export default Header

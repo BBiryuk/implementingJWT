@@ -8,7 +8,7 @@ SECRET_KEY = 'django-insecure-rby+n6t=ko%n8&n39-7^cx6o(h+9xtg^@p22^93augv^(xiab3
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS=[]
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
@@ -16,7 +16,7 @@ REST_FRAMEWORK = {
     )
 }
 
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ORIGIN_ALLOW_ALL = True
 
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=5),
